@@ -1,2 +1,14 @@
-<h1>BEM VINDO AO NOSSO E-COMMERCE</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+
+<%if user_signed_in?%>
+    <h1>BEM VINDO AO NOSSO E-COMMERCE</h1>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete%>
+<% else %>
+    <h2>Voce nao esta logado, por favor se cadastre</h2>
+<% end %>
+
+
+<br>
+<%= link_to "Sign in", new_user_session_path %> 
+<br>
+<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> 
